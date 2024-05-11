@@ -606,7 +606,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "my-website-logger"
+name = "my-website-monitor"
 version = "0.1.0"
 dependencies = [
  "gargoyle",
