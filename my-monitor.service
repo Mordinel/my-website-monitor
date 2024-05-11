@@ -1,0 +1,17 @@
+[Unit]
+Description=Gargoyle Web Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=gargoyle
+Group=gargoyle
+WorkingDirectory=/opt/gargoyle
+ExecStart=/opt/gargoyle/target/release/examples/web_monitor_email
+EnvironmentFile=/opt/gargoyle/.env
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+

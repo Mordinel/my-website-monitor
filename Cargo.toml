@@ -1,0 +1,16 @@
+[package]
+name = "my-website-logger"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[profile.release]
+opt-level = 3
+strip = true
+lto = "fat"
+
+[dependencies]
+gargoyle = "0.1.5"
+gargoyle-email-notifier = "0.1.0"
+gargoyle-web-monitor = "0.1.0"
+simplelog = "0.12.2"
