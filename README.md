@@ -17,7 +17,7 @@
         sudo mkdir -p /opt/gargoyle
         chown gargoyle:gargoyle /opt/gargoyle
         chmod 700 /opt/gargoyle
-        git clone https://github.com/Mordinel/gargoyle.git /opt/gargoyle
+        git clone https://github.com/Mordinel/my-website-monitor.git /opt/gargoyle
         git checkout v0.1.3
         cd /opt/gargoyle
 
