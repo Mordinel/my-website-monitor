@@ -369,9 +369,9 @@ dependencies = [
 
 [[package]]
 name = "gargoyle-feed-monitor"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2aff6970093a2ce585fa7b505a14306b0a49bab3336730768d3b23d4fc631c41"
+checksum = "b4cfe962d050fe58b12482db1313cb1503a80c8458a5f307d5bb3e32236305a5"
 dependencies = [
  "bytes",
  "chrono",
@@ -1198,9 +1198,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "2.0.61"
+version = "2.0.63"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c993ed8ccba56ae856363b1845da7266a7cb78e1d146c8a32d54b45a8b831fc9"
+checksum = "bf5be731623ca1a1fb7d8be6f261a3be6d3e2337b8a1f97be944d020c8fcb704"
 dependencies = [
  "proc-macro2",
  "quote",
