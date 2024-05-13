@@ -12,5 +12,6 @@ lto = "fat"
 [dependencies]
 gargoyle = "0.1.5"
 gargoyle-email-notifier = "0.1.0"
+gargoyle-feed-monitor = "0.1.0"
 gargoyle-web-monitor = "0.1.0"
 simplelog = "0.12.2"

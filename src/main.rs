@@ -1,6 +1,7 @@
 use gargoyle::Schedule;
 use gargoyle_web_monitor::WebAvailability;
 use gargoyle_email_notifier::{Email, Mailbox, Address};
+use gargoyle_feed_monitor::WebFeedUpdate;
 
 use simplelog::{ColorChoice, Config, LevelFilter, TermLogger, TerminalMode, WriteLogger};
 
@@ -33,6 +34,8 @@ fn main() {
     let smtp_relay = std::env::var("SMTP_RELAY").expect("SMTP_RELAY not set");
     let http_url = std::env::var("HTTP_URL").expect("HTTP_URL not set");
 
+    let feed_url = std::env::var("FEED_URL").expect("FEED_URL not set");
+
     let schedule_delay = std::env::var("SCHEDULE_DELAY_SECS")
         .expect("SCHEDULE_DELAY_SECS not set")
         .parse::<u64>()
@@ -54,13 +57,22 @@ fn main() {
 
     let mut web_monitor = WebAvailability::new(&http_url);
 
+    let mut feed_monitor = WebFeedUpdate::new(&feed_url);
+
     let mut scheduler = Schedule::default();
     scheduler.add(
-            &format!("The Gargoyle has detected that {http_url} has gone down"),
-            &format!("The Gargoyle has detected that {http_url} has recovered"),
-            Duration::from_secs(schedule_delay),
-            &mut web_monitor,
-            &mail_notifier,
+        &format!("The Gargoyle has detected that {http_url} has gone down"),
+        &format!("The Gargoyle has detected that {http_url} has recovered"),
+        Duration::from_secs(schedule_delay),
+        &mut web_monitor,
+        &mail_notifier,
+    );
+    scheduler.add(
+        &format!("The Gargoyle got an update from {feed_url}"),
+        &format!("The Gargoyle got an update from {feed_url}"),
+        Duration::from_secs(schedule_delay),
+        &mut feed_monitor,
+        &mail_notifier,
     );
 
     loop {
