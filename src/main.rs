@@ -55,9 +55,9 @@ fn main() {
         smtp_password,
     };
 
-    let mut web_monitor = WebAvailability::new(&http_url);
+    let mut web_monitor = WebAvailability::new(&http_url).unwrap();
 
-    let mut feed_monitor = WebFeedUpdate::new(&feed_url);
+    let mut feed_monitor = WebFeedUpdate::new(&feed_url).unwrap();
 
     let mut scheduler = Schedule::default();
     scheduler.add(

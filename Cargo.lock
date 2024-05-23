@@ -375,9 +375,9 @@ dependencies = [
 
 [[package]]
 name = "gargoyle-feed-monitor"
-version = "0.1.2"
+version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "66d514ca0c91360d33fb31a93d803f58ee5a03b9974bf6e175fc67e5e93cce1f"
+checksum = "bfb03a0b94cdce15dfec9e665bcc6c3e3c6bb96794dec9394e34d740a65dcc45"
 dependencies = [
  "bytes",
  "chrono",
@@ -389,9 +389,9 @@ dependencies = [
 
 [[package]]
 name = "gargoyle-web-monitor"
-version = "0.1.0"
+version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9504c7496156017492d1ad5692ea4c8566fc02ef181d6076541d9e1f71c02171"
+checksum = "aa6caf9ab136210424af4b54960f6d893a07d9169424a3ae32583363785c92ab"
 dependencies = [
  "gargoyle",
  "log",
